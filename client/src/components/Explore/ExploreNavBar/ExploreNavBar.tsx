@@ -1,12 +1,13 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import '../Events.styles.scss'
 import {useSearchParams, useNavigate} from 'react-router-dom'
-import {CityOption} from 'services/events/eventsService.model'
+import {CityOption, TimeOption} from 'services/events/eventsService.model'
 import e from 'express'
 
 const ExploreNavBar = () => {
   const [searchParams] = useSearchParams()
   const where = (searchParams.get('c') ?? 'newyork') as CityOption
+  const when = (searchParams.get('t') ?? 'week') as TimeOption
 
   const navigate = useNavigate()
   const todayButtonHandler = () => {
@@ -21,10 +22,14 @@ const ExploreNavBar = () => {
   return (
     <div className='Explore-body-main-nav'>
       <div className='Explore-body-main-nav-right'>
-        <div className='Explore-body-main-nav-button' onClick={weekButtonHandler}>
+        <div
+          className={`Explore-body-main-nav-button ${when === 'week' ? 'Selected' : ''}`}
+          onClick={weekButtonHandler}>
           This Week
         </div>
-        <div className='Explore-body-main-nav-button' onClick={todayButtonHandler}>
+        <div
+          className={`Explore-body-main-nav-button ${when === 'today' ? 'Selected' : ''}`}
+          onClick={todayButtonHandler}>
           Today
         </div>
       </div>

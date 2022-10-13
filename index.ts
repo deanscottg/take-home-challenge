@@ -1,5 +1,7 @@
 import app from "./app";
 import mongoose from "mongoose"
+import * as dotenv from "dotenv"
+dotenv.config()
 
 const server_port = Number(process.env.PORT) || 4000
 const server_host = process.env.YOUR_HOST || '0.0.0.0'

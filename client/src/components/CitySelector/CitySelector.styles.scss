@@ -69,7 +69,8 @@
         color: $primary;
 
         &:hover {
-            box-shadow: 0 0 30px -2px $primary, 0px 0px 10px $primary inset;
+            // box-shadow: 0 0 30px -2px $primary, 0px 0px 10px $primary inset;
+            box-shadow: 0 0 30px -2px #fc0, 0px 0px 10px #fc0 inset;
         }
     }
 }

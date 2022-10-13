@@ -1,5 +1,6 @@
+@import '@globals';
 .EventCard {
-    background: #fff;
+    background: $white;
     height: 400px;
     border-radius: 20px;
     background-size: cover;
@@ -51,11 +52,11 @@
                 font-weight: 700;
                 text-transform: uppercase;
                 font-size: 20px;
-                color: #fff;
+                color: $white;
             }
         }
         .EventCard-name {
-            color: #fff;
+            color: $white;
             height: 24px;
             overflow: hidden;
             font-family: Circular Std;
@@ -63,7 +64,7 @@
             font-size: 16px;
         }
         .EventCard-location {
-            color: #fff;
+            color: $white;
             height: 24px;
             overflow: hidden;
             font-family: Nunito;

@@ -1,15 +1,15 @@
 import {useEffect, useState} from 'react'
 
-import {WtwEvent} from './eventsService.model'
+import {GetEventsParams, WtwEvent} from './eventsService.model'
 import {getEvents} from './getEvents'
 
-export const useEvents = () => {
+export const useEvents = ({when, where}: GetEventsParams) => {
   const [response, setResponse] = useState<WtwEvent[]>([])
   const [status, setStatus] = useState<'LOADING' | 'SUCCESS'>('LOADING')
 
   useEffect(() => {
     const loadEvents = async () => {
-      const response = await getEvents()
+      const response = await getEvents({when, where})
       setResponse(response)
       setStatus('SUCCESS')
     }

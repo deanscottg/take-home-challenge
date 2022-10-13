@@ -1,9 +1,15 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
 
 import {City} from '../Cities.models'
 
 const CityItem = ({city}: {city: City}) => {
-  return <div className='gold'>{city.name}</div>
+  const navigate = useNavigate()
+  return (
+    <div className='gold' onClick={() => navigate(`/explore?c=${city.value}&t=week`)}>
+      {city.name}
+    </div>
+  )
 }
 
 export default CityItem

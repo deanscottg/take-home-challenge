@@ -1,9 +1,9 @@
 import React from 'react'
 import './EventCard.styles.scss'
-import {Event} from '../Events.models'
 import {format} from 'date-fns'
+import {WtwEvent} from 'services/events/eventsService.model'
 
-const EventCard = ({event}: {event: Event}) => {
+const EventCard = ({event}: {event: WtwEvent}) => {
   return (
     <div
       className='EventCard'

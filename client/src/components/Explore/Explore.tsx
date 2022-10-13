@@ -44,7 +44,7 @@ const Explore = () => {
         </div>
       </div>
       <img
-        onClick={() => navigate(-1)}
+        onClick={() => navigate(`/`)}
         src='https://posh-b2.s3.us-east-2.amazonaws.com/left-arrow-in-circular-button-black-symbol.svg'
         className='Explore-back'
         alt='back button'

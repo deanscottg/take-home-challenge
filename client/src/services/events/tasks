@@ -1,0 +1,4 @@
+1. populate mockEvents.ts with responses for the various combinations of cities and times.
+2. import those into getEvents, and return the correct list of mockEvents based on when/where params
+3. get t/city from url params in EventCardGrid, and use the those to populate when/where for useEvents
+4. use the events you get back from useEvents instead of the original EVENTS const we were using

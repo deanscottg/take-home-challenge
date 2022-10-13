@@ -1,12 +1,14 @@
 import React from 'react'
 // import {EVENTS} from './Events/Events.models'
 // import {useEvents} from 'services/events/useEvents'
-
+import {useNavigate} from 'react-router-dom'
 import ExploreNavBar from './ExploreNavBar'
 import './Events.styles.scss'
 import EventCardGrid from './EventCardGrid'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 const Explore = () => {
+  const navigate = useNavigate()
   // const {status, data: events} = useEvents()
 
   //   console.log({status})
@@ -42,8 +44,10 @@ const Explore = () => {
         </div>
       </div>
       <img
+        onClick={() => navigate(-1)}
         src='https://posh-b2.s3.us-east-2.amazonaws.com/left-arrow-in-circular-button-black-symbol.svg'
         className='Explore-back'
+        alt='back button'
       />
     </div>
   )

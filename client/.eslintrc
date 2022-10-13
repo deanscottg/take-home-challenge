@@ -51,7 +51,7 @@
         "endOfLine": "auto"
       }
     ],
-    "simple-import-sort/imports": ["error", {
+    "simple-import-sort/imports": ["warn", {
       "groups": [
         ["^react"],
         ["^\\u0000"],

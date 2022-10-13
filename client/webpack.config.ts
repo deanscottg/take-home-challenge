@@ -1,9 +1,8 @@
 import path from 'path'
-import {Configuration, DefinePlugin} from 'webpack'
+import {Configuration, EnvironmentPlugin} from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
-
 const server_port = Number(process.env.PORT!) || 3000
 const server_host = '0.0.0.0'
 
@@ -29,7 +28,7 @@ const webpackConfig = () => ({
         // Include ts, tsx, js, and jsx files.
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: 'babel-loader'
       },
       {
         test: /\.s?css$/,
@@ -74,9 +73,9 @@ const webpackConfig = () => ({
       template: './public/index.html',
       favicon: './src/assets/images/favicon.png',
     }),
-    // DefinePlugin allows you to create global constants which can be configured at compile time
-    new DefinePlugin({
+    new EnvironmentPlugin({
       'process.env': process.env.production || !process.env.development,
+      API_ROOT: 'http://localhost:4000',
     }),
     new ForkTsCheckerWebpackPlugin({
       // Speeds up TypeScript type checking and ESLint linting (by moving each to a separate process)

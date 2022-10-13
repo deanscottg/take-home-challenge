@@ -1,0 +1,117 @@
+@import '@globals';
+
+ .Explore {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    background: #000;
+    overflow: hidden;
+
+
+// .Explore video {
+//     pointer-events: none;
+// }
+
+    .Explore-video {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        opacity: .6;
+        filter: blur(100px);
+    }
+
+    .Explore-cover {
+        height: 300px;
+        width: 100%;
+        position: relative;
+
+
+        .Explore-cover-video {
+            width: 1200px;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: screen;
+            opacity: .9;
+        }
+    }
+
+    .Explore-body {
+        display: flex;
+        position: relative;
+        padding: 0 40px 40px;
+        width: 100%;
+        min-height: calc(100vh - 300px);
+        
+        .Explore-body-main {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        
+            .Explore-body-main-nav {
+                height: 60px;
+                min-height: 60px;
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+        
+                .Explore-body-main-nav-right {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    padding: 0 10px;
+                
+                
+                    .Explore-body-main-nav-button{
+                        border: 1px solid #7a7b7d;
+                        text-transform: uppercase;
+                        font-family: Circular Std;
+                        font-weight: 700;
+                        color: #7a7b7d;
+                        font-size: 14px;
+                        padding: 8px 30px;
+                        border-radius: 50px;
+                        cursor: pointer;
+                        transition: .2s;
+                    }
+                }
+                
+            }
+
+            .Explore-body-main-results {
+                .EventCardGrid {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 15px;
+            
+                    
+                }
+            }
+        }
+        
+    }
+
+
+
+
+
+
+    .Explore-back {
+    position: absolute;
+    opacity: .6;
+    top: 40px;
+    left: 40px;
+    width: 60px;
+    height: 60px;
+    transition: .2s;
+    cursor: pointer;
+    }
+ }
+
+
+
